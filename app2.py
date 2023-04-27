@@ -4,7 +4,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Generador QR | Serviplus",
-    page_icon="👨🏼‍💻")
+    page_icon="⭐️")
 col1, col2, col3 = st.columns((1,5,1))
 col2.title("Generador de Codigos Qr")
 def generate_qr_code():
