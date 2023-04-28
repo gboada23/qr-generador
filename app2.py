@@ -26,7 +26,7 @@ def generate_qr_code():
         QRcode.add_data(nombre)
         QRcode.make()
         
-        QRcolor = 'Darkblue'
+        QRcolor = 'black'
         QRimg = QRcode.make_image(fill_color=QRcolor, back_color="white").convert('RGB')
     
         pos = ((QRimg.size[0] - logo.size[0]) // 2, (QRimg.size[1] - logo.size[1]) // 2)
