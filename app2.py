@@ -42,8 +42,8 @@ def generate_qr_code():
             QRimg.save(img)
             if col2.download_button("Descargar QR", open(img, 'rb').read(), file_name=f'{NOMBRE}.png', mime='image/png'):
                 col2.success("QR generado y descargado!")
-        except unknown file extension:
-            col2.error(f"Rellena el segundo campo")
+        except Exception as e:
+            col2.error(f"Rellena el segundo campo para guardar el qr")
 
 generate_qr_code()
 st.write("#")
