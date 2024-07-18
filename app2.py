@@ -10,7 +10,8 @@ col2.title("Generador de Codigos Qr")
 def generate_qr_code():
     
     col2.write("")
-    nombre = col2.text_input(label="Ingrese el nombre del Personal aqui:", value="", max_chars=None, key=None)
+    nombre = col2.text_input(label="Ingrese el codigo cifrado de la agencia:", value="", max_chars=None, key=None)
+    NOMBRE = col2.text_input(label="Ingrese el codigo de la agencia relacionada al codigo cifrado:", value="", max_chars=None, key=None)
     if nombre == "":
         col2.write("Por favor introduce el nombre del Personal")
     else:
@@ -34,9 +35,9 @@ def generate_qr_code():
         
         col2.image(QRimg, width=300)
         col2.write(f"QR generado para {nombre}")
-        img = f'{nombre}.png'
+        img = f'{NOMBRE}.png'
         QRimg.save(img)
-        if col2.download_button("Descargar QR", open(img, 'rb').read(), file_name=f'{nombre}.png', mime='image/png'):
+        if col2.download_button("Descargar QR", open(img, 'rb').read(), file_name=f'{NOMBRE}.png', mime='image/png'):
             col2.success("QR generado y descargado!")
             
 generate_qr_code()
